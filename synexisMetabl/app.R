@@ -26,6 +26,12 @@ if (!require(packHV)) {
   install.packages("packHV")
   library(packHV)
 }
+if (!require(rsconnect)) {
+  install.packages("rsconnect")
+  library(rsconnect)
+}
+
+rsconnect::writeManifest()
 
 
 ui <- dashboardPage(
