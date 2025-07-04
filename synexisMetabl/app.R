@@ -322,8 +322,8 @@ server <- function(input, output, session) {
     col_data <- data()[[input$column]]; validate(need(is.numeric(col_data), "Επιλέξτε αριθμητική στήλη."))
     skew_val <- moments::skewness(col_data, na.rm = TRUE)
     skewness_description <- if (abs(skew_val) <= 0.5) { "έχουμε συμμετρία" } 
-    else if (skew_val < -0.5) { "οι τιμές είναι μαζεμένες αριστερά" } 
-    else { "οι τιμές είναι μαζεμένες δεξιά" }
+    else if (skew_val < -0.5) { "οι τιμές είναι μαζεμένες δεξιά" } 
+    else { "οι τιμές είναι μαζεμένες αριστερά" }
     paste("Ο συντελεστής ασυμμετρίας Pearson είναι", round(skew_val, 2), ", άρα", skewness_description, ".")
   })
   
